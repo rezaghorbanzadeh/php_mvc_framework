@@ -9,6 +9,6 @@ class Home extends Controller{
     }
 
     public function crate(){
-        echo "crate";    
-       }
+        $this->redirect("home") ;   
+    }
 }
