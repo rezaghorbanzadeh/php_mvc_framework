@@ -1,0 +1,16 @@
+{
+    "name": "lenovo/php-framework",
+    "autoload": {
+        "psr-4": {
+            "Lenovo\\PhpFramework\\": "src/",
+            "App\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "reza",
+            "email": "rdaqrbanzadh206@gmail.com"
+        }
+    ],
+    "require": {}
+}
