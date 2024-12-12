@@ -4,6 +4,7 @@ namespace App\controllers;
 
 use App\Core\Application;
 use App\Core\Controller;
+use App\Core\Request;
 
 class  SiteController extends  Controller
 {
@@ -16,8 +17,14 @@ class  SiteController extends  Controller
         return self::render('home', $params);
 
     }
-    public static function handleContent()
+    public static function handleContent(Request $request)
     {
+       $body =  $request->getBody();
+
+       echo '<pre>';
+       var_dump($body);
+       echo '</pre>';
+       exit();
         return "handling content data";
     }
 
