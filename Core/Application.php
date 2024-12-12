@@ -10,12 +10,17 @@ class Application {
     public static string $ROOT_DIT;
     public Router $router;
     public Request $request;
+    public Response  $response;
+
+    public static Application $app;
 
     public function __construct($rootPath)
     {
         self::$ROOT_DIT = $rootPath;
+        self::$app = $this;
         $this->request = new Request();
-        $this->router = new Router($this->request);
+        $this->response = new Response();
+        $this->router = new Router($this->request,$this->response);
     }
 
     public function run()
