@@ -13,7 +13,7 @@ class  SiteController extends  Controller
         $params = [
           'name'  =>'reza'
         ];
-        return $this->render('home', $params);
+        return self::render('home', $params);
 
     }
     public static function handleContent()
