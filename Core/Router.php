@@ -48,9 +48,9 @@ class Router
           echo call_user_func($callback);
     }
 
-    public function renderView($view){
+    public function renderView($view , $params = []){
         $layoutContact = $this->layoutContact();
-        $viewContent = $this->renderOnlyView($view);
+        $viewContent = $this->renderOnlyView($view , $params);
         
         return str_replace('{{contact}}',$viewContent,$layoutContact);
     }
@@ -67,7 +67,11 @@ class Router
     }
 
 
-    protected function renderOnlyView($view){
+    protected function renderOnlyView($view, $params){
+        foreach ($params as $key => $value) {
+            $$key = $value;
+        }
+
         ob_start();
         include_once Application::$ROOT_DIT."/views/$view.php";
         return ob_get_clean();
